@@ -30,6 +30,7 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
         <a href="register.html">Register</a>
         <a href="diabetes-info.html">Information</a>
         <a href="record-form.php">Record form</a>
+        <a href="diagram.php">Record Diagram</a>
         <?php
     // Show "Logout" link if the user is logged in
     if (isset($_SESSION['user_id'])) {
