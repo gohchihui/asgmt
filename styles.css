@@ -27,6 +27,14 @@ button {
   background-color: #333;
 }
 
+.navbar a img{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 .navbar a {
   float: left;
   display: block;
@@ -50,6 +58,10 @@ button {
   display: none;
 }
 
+.navbar img {
+  display: block;
+  float: left;
+}
 
 @media screen and (max-width: 600px) {
   .navbar a:not(:first-child) {display: none;}
@@ -58,9 +70,12 @@ button {
       display: block;
       background-color: aliceblue;
   }
-}
+  .navbar img{
+    
+      display: none;
+  }
 
-@media screen and (max-width: 600px) {
+
   .navbar.responsive a.icon {
       position: absolute;
       right: 0;

@@ -40,10 +40,11 @@ $conn->close();
 </head>
 <body>
     <div class="navbar" id="myNavbar">
-        <a href="#" class="active">Home</a>
+    <img src="img/logo.jpg" width="50">
         <a href="login.html">Login</a>
         <a href="register.html">Register</a>
         <a href="diabetes-info.html">Information</a>
+        <a href="guideness.html">Guidelines</a>
         <a href="record-form.php">Record form</a>
         <a href="edit-record.php">Edit record</a>
         <?php

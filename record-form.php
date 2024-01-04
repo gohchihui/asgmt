@@ -69,7 +69,7 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 </head>
 <body>
 <div class="navbar" id="myNavbar">
-        <a href="#" class="active">Home</a>
+<img src="img/logo.jpg" width="50">
         <a href="login.html">Login</a>
         <a href="register.html">Register</a>
         <a href="diabetes-info.html">Information</a>
