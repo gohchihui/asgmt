@@ -5,7 +5,7 @@ session_start();
 
 // Check if the user is logged in; redirect to login page if not
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 
@@ -70,9 +70,17 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 <body>
 <div class="navbar" id="myNavbar">
 <img src="img/logo.jpg" width="50">
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <a href="diabetes-info.html">Information</a>
+        <!-- <a href="login.php">Login</a>
+        <a href="register.php">Register</a> -->
+        <?php
+   
+   if (!isset($_SESSION['user_id'])) {
+    echo '<a href="login1.php">Login</a>
+          <a href="register1.php">Register</a>';
+}
+        ?>
+        <a href="diabetes-info.php">Information</a>
+        <a href="guideness.php">Guidelines</a>
         <a href="edit-record.php">Edit record</a>
         <a href="diagram.php">Record Diagram</a>
         <?php
