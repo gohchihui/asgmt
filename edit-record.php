@@ -17,16 +17,18 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Edit Diabetes Record</title>
 </head>
+
 <body>
-<div class="navbar" id="myNavbar">
-<img src="img/logo.jpg" width="50">
-<?php
+    <div class="navbar" id="myNavbar">
+        <img src="img/logo.jpg" width="50">
+        <?php
    
    if (!isset($_SESSION['user_id'])) {
     echo '<a href="login1.php">Login</a>
@@ -51,14 +53,14 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
     <!-- Your page content goes here -->
 
     <script>
-        function toggleNavbar() {
-            var x = document.getElementById("myNavbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
+    function toggleNavbar() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
         }
+    }
     </script>
     <div class="container">
         <h1>Edit Diabetes Record</h1>
@@ -67,9 +69,9 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
             <label for="record_id">Select Record:</label>
             <select name="record_id" id="record_id" required>
                 <?php foreach ($records as $record): ?>
-                    <option value="<?php echo $record['id']; ?>">
-                        <?php echo "{$record['entry_date']} - Glucose Level: {$record['glucose_level']}"; ?>
-                    </option>
+                <option value="<?php echo $record['id']; ?>">
+                    <?php echo "{$record['entry_date']} - Glucose Level: {$record['glucose_level']}"; ?>
+                </option>
                 <?php endforeach; ?>
             </select>
 
@@ -77,6 +79,7 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
         </form>
     </div>
 </body>
+
 </html>
 
 <?php

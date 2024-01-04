@@ -61,15 +61,17 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Diabetes Record Form</title>
 </head>
+
 <body>
-<div class="navbar" id="myNavbar">
-<img src="img/logo.jpg" width="50">
+    <div class="navbar" id="myNavbar">
+        <img src="img/logo.jpg" width="50">
         <!-- <a href="login.php">Login</a>
         <a href="register.php">Register</a> -->
         <?php
@@ -97,18 +99,18 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
     <!-- Your page content goes here -->
 
     <script>
-        function toggleNavbar() {
-            var x = document.getElementById("myNavbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
+    function toggleNavbar() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
         }
+    }
     </script>
     <div class="container">
         <h1>Diabetes Record Form</h1>
-        
+
         <!-- Form for Creating and Updating Records -->
         <form action="record-form.php" method="post">
             <input type="hidden" name="record_id" id="record_id">
@@ -128,25 +130,26 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
         <h2>Existing Records</h2>
         <ul>
             <?php foreach ($records as $record): ?>
-                <!-- record-form.php -->
-                <!-- ... (previous code) -->
-                <li>
-                    <?php echo "{$record['entry_date']} - Glucose Level: {$record['glucose_level']}"; ?>
-                    <a href="edit-record.php?record_id=<?php echo $record['id']; ?>">Edit</a>
-                    <form style="display:inline-block;" action="record-form.php" method="post">
-                        <input type="hidden" name="record_id" value="<?php echo $record['id']; ?>">
-                        <button type="submit" name="delete">Delete</button>
-                    </form>
-                </li>
-                <!-- ... (remaining code) -->
+            <!-- record-form.php -->
+            <!-- ... (previous code) -->
+            <li>
+                <?php echo "{$record['entry_date']} - Glucose Level: {$record['glucose_level']}"; ?>
+                <a href="edit-record.php?record_id=<?php echo $record['id']; ?>">Edit</a>
+                <form style="display:inline-block;" action="record-form.php" method="post">
+                    <input type="hidden" name="record_id" value="<?php echo $record['id']; ?>">
+                    <button type="submit" name="delete">Delete</button>
+                </form>
+            </li>
+            <!-- ... (remaining code) -->
 
             <?php endforeach; ?>
         </ul>
     </div>
 
-    
+
 
 </body>
+
 </html>
 
 <?php

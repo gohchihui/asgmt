@@ -30,18 +30,20 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Records Chart</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+    </script>
 </head>
+
 <body>
     <div class="navbar" id="myNavbar">
-    <img src="img/logo.jpg" width="50">
-    <?php
+        <img src="img/logo.jpg" width="50">
+        <?php
    
    if (!isset($_SESSION['user_id'])) {
     echo '<a href="login1.php">Login</a>
@@ -58,74 +60,74 @@ $conn->close();
                 echo '<a href="logout.php">Logout</a>';
             }
         ?>
-    <a href="javascript:void(0)" class="icon" onclick="toggleNavbar()"> 
-        <i class="fa fa-bars"></i>
-    </a>
-    <script>
-    function toggleNavbar() {
-        var x = document.getElementById("myNavbar");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
+        <a href="javascript:void(0)" class="icon" onclick="toggleNavbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <script>
+        function toggleNavbar() {
+            var x = document.getElementById("myNavbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
         }
-    }
-</script>
+        </script>
     </div>
 
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
     <script>
- new Chart("myChart", {
-    type: 'line',
-    data: {
-        labels: <?php echo json_encode($labels); ?>,
-        datasets: [{
-            label: 'Glucose Level',
-            data: <?php echo json_encode($data); ?>,
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 2,
-            fill: false
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            x: {
-                type: 'time',
-                time: {
-                    unit: 'day',
-                    displayFormats: {
-                        day: 'MMM D'
+    new Chart("myChart", {
+        type: 'line',
+        data: {
+            labels: <?php echo json_encode($labels); ?>,
+            datasets: [{
+                label: 'Glucose Level',
+                data: <?php echo json_encode($data); ?>,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                            day: 'MMM D'
+                        }
                     }
+                },
+                y: {
+                    beginAtZero: true
                 }
             },
-            y: {
-                beginAtZero: true
-            }
-        },
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top'
-            },
-            tooltip: {
-                mode: 'index',
-                intersect: false
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
             }
         }
-    }
-});
+    });
 
-if (typeof Chart !== 'undefined') {
-    // Your Chart.js code here
-} else {
-    console.error('Chart.js is not defined. Make sure it is properly loaded.');
-}
+    if (typeof Chart !== 'undefined') {
+        // Your Chart.js code here
+    } else {
+        console.error('Chart.js is not defined. Make sure it is properly loaded.');
+    }
     </script>
 
 
 </body>
-</html>
 
+</html>

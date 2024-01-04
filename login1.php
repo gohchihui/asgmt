@@ -1,18 +1,20 @@
 <!-- login.php -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>User Login</title>
 </head>
+
 <body>
     <div class="navbar" id="myNavbar">
         <img src="img/logo.jpg" width="50">
-     
-       
-            <?php
+
+
+        <?php
    
             if (!isset($_SESSION['user_id'])) {
              echo '<a href="login1.php">Login</a>
@@ -25,20 +27,20 @@
         <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
             <i class="fa fa-bars"></i>
         </a>
-    
+
     </div>
 
     <!-- Your page content goes here -->
 
     <script>
-        function toggleNavbar() {
-            var x = document.getElementById("myNavbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
+    function toggleNavbar() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
         }
+    }
     </script>
     <div class="container">
         <h1>User Login</h1>
@@ -53,4 +55,5 @@
         </form>
     </div>
 </body>
+
 </html>

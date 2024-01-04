@@ -1,12 +1,14 @@
 <!-- register.php -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>User Registration</title>
 </head>
+
 <body>
     <div class="navbar" id="myNavbar">
         <img src="img/logo.jpg" width="50">
@@ -28,14 +30,14 @@
     <!-- Your page content goes here -->
 
     <script>
-        function toggleNavbar() {
-            var x = document.getElementById("myNavbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
+    function toggleNavbar() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
         }
+    }
     </script>
     <div class="container">
         <h1>User Registration</h1>
@@ -50,4 +52,5 @@
         </form>
     </div>
 </body>
+
 </html>
