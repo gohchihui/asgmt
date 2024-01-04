@@ -27,7 +27,7 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
     <div class="navbar" id="myNavbar">
-        <?php include "navbar_login.php"; ?>
+        <?php include "navbar.php"; ?>
     </div>
 
     <!-- Page content-->

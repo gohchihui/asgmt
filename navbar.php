@@ -2,19 +2,23 @@
 <img src="img/logo.jpg" width="50px" height="46px">
 
 <?php
+    //no login can see
     if (!isset($_SESSION['user_id'])) {
-    echo '<a href="login.php">Login</a>
-        <a href="register.php">Register</a>';
-    }
+        echo '<a href="login.php">Login</a>
+            <a href="register.php">Register</a>';
+        }
 ?>
 
 <a href="diabetes-info.php">Information</a>
 <a href="guideness.php">Guidelines</a>
 
 <?php
-    // Show "Logout" link if the user is logged in
+    //after login can see
     if (isset($_SESSION['user_id'])) {
-        echo '<a href="logout.php">Logout</a>';
+        echo '<a href="record-form.php">Record form</a>
+            <a href="edit-record.php">Edit record</a>
+            <a href="diagram.php">Record Diagram</a>
+            <a href="logout.php">Logout</a>';
     }
 ?>
 

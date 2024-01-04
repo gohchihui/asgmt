@@ -14,11 +14,7 @@
     <div class="navbar" id="myNavbar">
         <?php 
             session_start();
-            if (!isset($_SESSION['user_id'])) {
-                include "navbar.php"; 
-            }else {
-                include "navbar_login.php"; 
-            }
+            include "navbar.php"; 
         ?>
     </div>
 

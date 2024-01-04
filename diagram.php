@@ -42,7 +42,7 @@ $conn->close();
 
 <body>
     <div class="navbar" id="myNavbar">
-        <?php include "navbar_login.php"; ?>
+        <?php include "navbar.php"; ?>
     </div>
 
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
