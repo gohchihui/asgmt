@@ -52,6 +52,19 @@ $conn->close();
                 echo '<a href="logout.php">Logout</a>';
             }
         ?>
+    <a href="javascript:void(0)" class="icon" onclick="toggleNavbar()"> 
+        <i class="fa fa-bars"></i>
+    </a>
+    <script>
+    function toggleNavbar() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+</script>
     </div>
 
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -105,6 +118,8 @@ if (typeof Chart !== 'undefined') {
     console.error('Chart.js is not defined. Make sure it is properly loaded.');
 }
     </script>
+
+
 </body>
 </html>
 
