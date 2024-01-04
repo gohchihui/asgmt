@@ -66,7 +66,7 @@
             <h1>2 Ways to Get Up From a Fall</h1>
             <button onclick="openLinkInNewWindow('https://www.youtube.com/watch?v=sotxItsi71A')"
                 class="btn btn-secondary">Reference: Link here</button>
-            <iframe src="./img/2 Ways to Get Up From a Fall.mp4" frameborder="50"></iframe>
+            <iframe src="./img/2 Ways to Get Up From a Fall.mp4" frameborder="50" sandbox></iframe>
         </div>
 
 
