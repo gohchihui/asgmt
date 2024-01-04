@@ -25,6 +25,10 @@ button {
 .navbar {
   overflow: hidden;
   background-color: #333;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  padding: 0px;
 }
 
 .navbar a img {
@@ -38,11 +42,12 @@ button {
 
 .navbar a {
   float: left;
-  display: block;
+  display: flex;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 11px 16px;
   text-decoration: none;
+  align-items: center;
 }
 
 .navbar a:hover {
@@ -64,7 +69,16 @@ button {
   float: left;
 }
 
-@media screen and (max-width: 600px) {
+#content3 {
+  position: absolute;
+}
+
+#content3 img {
+  position: relative;
+  right: 15%;
+}
+
+@media screen and (max-width: 760px) {
   .navbar a:not(:first-child) {
     display: none;
   }
@@ -76,10 +90,8 @@ button {
   }
 
   .navbar img {
-
     display: none;
   }
-
 
   .navbar.responsive a.icon {
     position: absolute;
