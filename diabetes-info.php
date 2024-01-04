@@ -12,21 +12,14 @@
 <body>
 
     <div class="navbar" id="myNavbar">
-        <img src="img/logo.jpg" width="50">
-        <?php
-   
+        <?php 
+            session_start();
             if (!isset($_SESSION['user_id'])) {
-            echo '<a href="login1.php">Login</a>
-                <a href="register1.php">Register</a>';
+                include "navbar.php"; 
+            }else {
+                include "navbar_login.php"; 
             }
-         ?>
-        <a href="diabetes-info.php">Information</a>
-
-        <a href="guideness.php">Guidelines</a>
-        <a href="logout.php">Logout</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
-            <i class="fa fa-bars"></i>
-        </a>
+        ?>
     </div>
 
     <div class="container">
@@ -64,17 +57,6 @@
             American Diabetes Association (ADA) and consult with your healthcare team for personalized guidance.
         </p>
     </div>
-
-    <script>
-    function toggleNavbar() {
-        var x = document.getElementById("myNavbar");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-    </script>
 
 </body>
 

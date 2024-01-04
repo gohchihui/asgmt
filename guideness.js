@@ -43,11 +43,11 @@ function openLinkInNewWindow(url) {
   window.open(url, '_blank');
 }
 
-function toggleNavbar() {
-  var x = document.getElementById("myNavbar");
-  if (x.className === "navbar") {
-    x.className += " responsive";
-  } else {
-    x.className = "navbar";
-  }
-}
+// function toggleNavbar() {
+//   var x = document.getElementById("myNavbar");
+//   if (x.className === "navbar") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "navbar";
+//   }
+// }

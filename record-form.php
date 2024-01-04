@@ -71,43 +71,11 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
     <div class="navbar" id="myNavbar">
-        <img src="img/logo.jpg" width="50">
-        <!-- <a href="login.php">Login</a>
-        <a href="register.php">Register</a> -->
-        <?php
-   
-   if (!isset($_SESSION['user_id'])) {
-    echo '<a href="login1.php">Login</a>
-          <a href="register1.php">Register</a>';
-}
-        ?>
-        <a href="diabetes-info.php">Information</a>
-        <a href="guideness.php">Guidelines</a>
-        <a href="edit-record.php">Edit record</a>
-        <a href="diagram.php">Record Diagram</a>
-        <?php
-    // Show "Logout" link if the user is logged in
-    if (isset($_SESSION['user_id'])) {
-        echo '<a href="logout.php">Logout</a>';
-    }
-    ?>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
-            <i class="fa fa-bars"></i>
-        </a>
+        <?php include "navbar_login.php"; ?>
     </div>
 
-    <!-- Your page content goes here -->
+    <!-- Page content-->
 
-    <script>
-    function toggleNavbar() {
-        var x = document.getElementById("myNavbar");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-    </script>
     <div class="container">
         <h1>Diabetes Record Form</h1>
 
@@ -130,8 +98,6 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
         <h2>Existing Records</h2>
         <ul>
             <?php foreach ($records as $record): ?>
-            <!-- record-form.php -->
-            <!-- ... (previous code) -->
             <li>
                 <?php echo "{$record['entry_date']} - Glucose Level: {$record['glucose_level']}"; ?>
                 <a href="edit-record.php?record_id=<?php echo $record['id']; ?>">Edit</a>
@@ -140,13 +106,10 @@ $records = $result->fetch_all(MYSQLI_ASSOC);
                     <button type="submit" name="delete">Delete</button>
                 </form>
             </li>
-            <!-- ... (remaining code) -->
 
             <?php endforeach; ?>
         </ul>
     </div>
-
-
 
 </body>
 

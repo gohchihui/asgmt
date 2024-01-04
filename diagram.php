@@ -42,37 +42,7 @@ $conn->close();
 
 <body>
     <div class="navbar" id="myNavbar">
-        <img src="img/logo.jpg" width="50">
-        <?php
-   
-   if (!isset($_SESSION['user_id'])) {
-    echo '<a href="login1.php">Login</a>
-          <a href="register1.php">Register</a>';
-}
-        ?>
-        <a href="diabetes-info.pgp">Information</a>
-        <a href="guideness.php">Guidelines</a>
-        <a href="record-form.php">Record form</a>
-        <a href="edit-record.php">Edit record</a>
-        <?php
-            // Show "Logout" link if the user is logged in
-            if (isset($_SESSION['user_id'])) {
-                echo '<a href="logout.php">Logout</a>';
-            }
-        ?>
-        <a href="javascript:void(0)" class="icon" onclick="toggleNavbar()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <script>
-        function toggleNavbar() {
-            var x = document.getElementById("myNavbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
-        }
-        </script>
+        <?php include "navbar_login.php"; ?>
     </div>
 
     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
