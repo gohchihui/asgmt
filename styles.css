@@ -78,6 +78,17 @@ button {
   right: 15%;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.form {
+  width: 300px;
+}
+
 @media screen and (max-width: 760px) {
   .navbar a:not(:first-child) {
     display: none;
