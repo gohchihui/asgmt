@@ -115,4 +115,8 @@ button {
     display: block;
     text-align: left;
   }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
 }
