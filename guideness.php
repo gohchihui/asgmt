@@ -73,7 +73,7 @@
             medicnes</button>
         <div id="content3" class="hidden mt-3">
 
-            <img src="./img/Top-10-most-common-prescription-medications-in-patients-aged-85-by-sex.png" alt="Image 1">
+            <img src="./img/Top-10-most-common-prescription-medications-in-patients-aged-85-by-sex.png" alt="Image 1" width="100%">
 
         </div>
     </div>
